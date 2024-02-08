@@ -4,7 +4,9 @@
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Back\\Preactica1\\": "app/"
+            "Back\\Preactica1\\": "app/",
+            "config\\": "app/config/", 
+            "controller\\": "app/controller/"
         }
     },
     "minimum-stability": "dev",

@@ -1,0 +1,2 @@
+prueba1
+create table t_persona( id_persona int auto_increment primary key, nombre varchar(50), apellido varchar(50), email varchar(200) );
