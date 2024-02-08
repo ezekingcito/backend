@@ -1,17 +1,23 @@
-<?php
-    require_once realpath('./vendor/autoload.php');
-    $dotenv = Dotenv\Dotenv::createImmutable('./');
-    $dotenv->load();
+<?php 
+require_once realpath('./vendor/autoload.php');
 
-    $servidor = $_ENV['SERVIDOR'];
-    $usuario = $_ENV['USUARIO'];
-    $password = $_ENV['PASSWORD'];
-    $puerto = $_ENV['PUERTO'];
-    $bd = $_ENV['BD'];    
-    $conexion = new PDO("mysql:servidor=$servidor;puerto=$puerto;bd=$bd", $usuario, $password);
-    if ($conexion == True) {
-        echo 'conectanding';
-    }else {
-        echo 'Not conectanding';
-    }
+$dotenv = Dotenv\Dotenv::createImmutable('./');
+
+$dotenv -> load();
+
+
+$host = $_ENV['HOST'];
+$port = $_ENV['PORT'];
+$database = $_ENV['DB'];
+$username = $_ENV['USER'];
+$password = $_ENV['PASSWORD'];
+
+try {
+    $pdo = new PDO("mysql:host=$host;port=$port;dbname=$database", $username, $password);
+    echo "Nos conectamos a la nasa :)";
+} catch (PDOException $e) {
+    echo "No nos pudimos conectar a la nasa :(";
+}
+
+
 ?>
