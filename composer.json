@@ -6,7 +6,8 @@
         "psr-4": {
             "Back\\Preactica1\\": "app/",
             "config\\": "app/config/", 
-            "controller\\": "app/controller/"
+            "controller\\": "app/controller/",
+            "model\\": "app/model/"
         }
     },
     "minimum-stability": "dev",
